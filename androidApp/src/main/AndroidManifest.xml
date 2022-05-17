@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jetbrains.androidApp">
+    package="com.jetbrains.kmm.androidApp">
 
     <application
         android:allowBackup="false"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data android:name="io.sentry.dsn" android:value="https://18726bfae82d480e824ebd194b8b4342@o1169741.ingest.sentry.io/6410573" />
+        <meta-data android:name="io.sentry.inAppInclude" android:value="com.jetbrains.kmm.androidApp" />
+        <!-- Set tracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+           We recommend adjusting this value in production. -->
+        <meta-data android:name="io.sentry.traces.sample-rate" android:value="1.0" />
         <activity
             android:name="com.jetbrains.kmm.androidApp.MainActivity"
             android:exported="true">

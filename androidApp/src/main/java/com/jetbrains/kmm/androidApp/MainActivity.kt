@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.widget.Button
 import android.widget.EditText
 import com.jetbrains.kmm.shared.Greeting
 import com.jetbrains.kmm.shared.Calculator
 import android.widget.TextView
-import com.jetbrains.androidApp.R
+import io.sentry.Sentry
 
 fun greet(): String {
     return Greeting().greeting()
@@ -46,5 +47,18 @@ class MainActivity : AppCompatActivity() {
         numATV.addTextChangedListener(textWatcher)
         numBTV.addTextChangedListener(textWatcher)
 
+        val uncaught: Button = findViewById(R.id.uncaught)
+        uncaught.setOnClickListener {
+            run {
+                throw RuntimeException ("uncaught exception")
+            }
+        }
+
+        val caught: Button = findViewById(R.id.caught)
+        caught.setOnClickListener {
+            run {
+                Sentry.captureException(RuntimeException("caught exception"))
+            }
+        }
     }
 }
