@@ -61,21 +61,40 @@
       android:id="@+id/uncaught"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+      android:layout_marginTop="52dp"
       android:layout_marginEnd="40dp"
-      android:layout_marginBottom="41dp"
       android:text="uncaught"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintEnd_toEndOf="parent" />
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
   <Button
       android:id="@+id/caught"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="54dp"
-      android:layout_marginBottom="41dp"
+      android:layout_marginTop="44dp"
       android:text="caught"
-      app:layout_constraintBottom_toBottomOf="parent"
-      app:layout_constraintStart_toStartOf="parent" />
+      app:layout_constraintStart_toStartOf="@+id/uncaught"
+      app:layout_constraintTop_toBottomOf="@+id/uncaught" />
+
+  <Button
+      android:id="@+id/thread"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="44dp"
+      android:text="thread"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/spawn" />
+
+  <Button
+      android:id="@+id/spawn"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="32dp"
+      android:layout_marginTop="52dp"
+      android:text="spawn thread"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

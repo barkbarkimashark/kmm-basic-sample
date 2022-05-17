@@ -60,5 +60,19 @@ class MainActivity : AppCompatActivity() {
                 Sentry.captureException(RuntimeException("caught exception"))
             }
         }
+
+        val spawnThread: Button = findViewById(R.id.spawn)
+        spawnThread.setOnClickListener {
+            run{
+                Thread(ToastMe(this)).start()
+            }
+        }
+
+        val sendThreadMessage: Button = findViewById(R.id.thread)
+        sendThreadMessage.setOnClickListener{
+            run {
+                Sentry.captureMessage("this is a message with thread information")
+            }
+        }
     }
 }
